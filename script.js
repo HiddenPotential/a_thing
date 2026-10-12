@@ -75,8 +75,10 @@
           el("p", { textContent: pr.description }),
         ]);
         if (pr.url) {
-          Object.assign(card, { href: pr.url, target: "_blank", rel: "noopener" });
-          card.append(el("span", { className: "arrow", textContent: "↗" }));
+          const onPage = pr.url.startsWith("#");
+          card.href = pr.url;
+          if (!onPage) Object.assign(card, { target: "_blank", rel: "noopener" });
+          card.append(el("span", { className: "arrow", textContent: onPage ? "▶" : "↗" }));
         }
         return card;
       })

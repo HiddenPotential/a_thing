@@ -112,6 +112,17 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px 0 64px; }
 .paper p { margin: 0 0 12px; }
 .paper p:last-child { margin: 0; }
 
+/* Game */
+html { scroll-behavior: smooth; }
+.play-note { margin: 0 0 16px; color: var(--muted); }
+.game-frame { container-type: inline-size; }
+.game-frame iframe {
+  display: block; width: 100%; max-width: 512px; margin: 0 auto;
+  /* matches the game's own layout: a 1.2-tall board plus ~400px of controls */
+  height: calc(1.2 * (min(100cqw, 512px) - 56px) + 402px);
+  border: 1px solid var(--border); border-radius: 16px; background: #120a24;
+}
+
 /* Things I do */
 .activities { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
 .activity { display: flex; gap: 14px; padding: 16px 20px; }
