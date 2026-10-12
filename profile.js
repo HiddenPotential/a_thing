@@ -8,8 +8,8 @@
 // ─────────────────────────────────────────────────────────────
 
 window.PROFILE = {
-  name: "Your Name",
-  nickname: "YN",
+  name: "Anna Wang",
+  nickname: "AW",
   grade: "7th grader",
   hi: "Hi! I'm",
   tagline: "I like building stuff, drawing, and asking way too many questions. ✨",
