@@ -37,9 +37,9 @@ window.PROFILE = {
 
   projects: [
     {
-      name: "Maze Game",
-      description: "A game where you escape a maze before the timer runs out.",
-      url: "",
+      name: "Coin Pusher",
+      description: "An arcade coin pusher game! Drop coins, push them off the edge, and try to hit the LUCKY slot.",
+      url: "https://hiddenpotential.github.io/cool/",
     },
     {
       name: "Paper Airplane Lab",
