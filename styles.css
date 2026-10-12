@@ -156,7 +156,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px 0 76px; }
 .links a:hover { transform: translate(-2px, -2px) rotate(-2deg); box-shadow: 5px 6px 0 var(--line); }
 
 .doodle { position: absolute; fill: none; stroke: var(--pen); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
-.doodle.star { width: 56px; top: 40px; right: 10px; transform: rotate(12deg); animation: spin 10s linear infinite; }
+.doodle.star { width: 56px; top: 96px; right: 10px; transform: rotate(12deg); animation: spin 10s linear infinite; }
 .doodle.squiggle { width: 160px; bottom: 18px; right: 40px; stroke: var(--ink); }
 
 /* Sections */
@@ -279,3 +279,74 @@ a.card:hover { transform: translate(-3px, -3px) rotate(0); box-shadow: 6px 7px 0
   .faves { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .footer { padding: 24px 16px 40px 40px; }
 }
+
+/* ── Easter eggs 🥚 ─────────────────────────────────────── */
+.photo-frame { cursor: pointer; user-select: none; }
+.doodle.star { pointer-events: auto; cursor: pointer; }
+.photo-frame.wiggle { animation: wiggle .4s ease; }
+.photo-frame.flip { animation: flip .7s ease; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  25% { transform: rotate(-10deg) scale(1.03); }
+  75% { transform: rotate(0deg) scale(1.03); }
+}
+@keyframes flip {
+  from { transform: rotate(-5deg) rotateY(0); }
+  to { transform: rotate(-5deg) rotateY(360deg); }
+}
+
+.egg-toast {
+  position: fixed; left: 50%; bottom: 24px; z-index: 100;
+  max-width: calc(100vw - 32px); padding: 10px 18px;
+  background: var(--yellow); color: var(--text);
+  border: 2px solid var(--line); border-radius: 10px; box-shadow: var(--shadow);
+  font-size: 1.1rem; text-align: center;
+  transform: translate(-50%, 140%) rotate(-2deg); opacity: 0;
+  transition: transform .35s cubic-bezier(.3, 1.6, .5, 1), opacity .2s;
+  pointer-events: none;
+}
+.egg-toast.show { transform: translate(-50%, 0) rotate(-2deg); opacity: 1; }
+
+.egg-fall {
+  position: fixed; top: -60px; z-index: 90; pointer-events: none;
+  animation: fall linear forwards;
+}
+@keyframes fall { to { transform: translateY(calc(100vh + 120px)) rotate(540deg); } }
+
+.egg-burst {
+  position: fixed; z-index: 90; pointer-events: none; font-size: 22px;
+  translate: -50% -50%;
+  animation: burst .9s ease-out forwards;
+}
+@keyframes burst {
+  from { transform: translate(0, 0) scale(.4); opacity: 1; }
+  to { transform: translate(var(--dx), var(--dy)) scale(1.2); opacity: 0; }
+}
+
+.egg-plane {
+  position: fixed; top: 30vh; left: -60px; z-index: 90; pointer-events: none;
+  font-size: 44px; animation: fly 3s ease-in-out forwards;
+}
+@keyframes fly {
+  0% { transform: translate(0, 0) rotate(10deg); }
+  30% { transform: translate(35vw, -12vh) rotate(-10deg); }
+  60% { transform: translate(65vw, 8vh) rotate(15deg); }
+  100% { transform: translate(calc(100vw + 120px), -20vh) rotate(-20deg); }
+}
+
+.egg-heart {
+  border: 0; padding: 0 2px; background: none; cursor: pointer;
+  font: inherit; color: var(--pen); transition: transform .15s;
+}
+.egg-heart:hover { transform: scale(1.4); }
+
+.cheat-mode .highlight,
+.cheat-mode .section h2 {
+  background: linear-gradient(90deg, #ff4d4d, #ffb84d, #ffe94d, #4dff88, #4db8ff, #b84dff, #ff4d4d);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: rainbow 1.2s linear infinite;
+}
+.cheat-mode .fave, .cheat-mode .card { animation: bounce .6s ease-in-out infinite alternate; }
+@keyframes rainbow { to { background-position: 200% center; } }
+@keyframes bounce { to { translate: 0 -8px; } }
