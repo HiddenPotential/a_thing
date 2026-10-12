@@ -35,6 +35,24 @@
     $("about-text").append(...p.about.map((t) => el("p", { textContent: t })));
   } else hide("about");
 
+  // Things I do
+  if (p.activities?.length) {
+    $("activities-list").append(
+      ...p.activities.map((a) => {
+        const title = a.url
+          ? el("a", { href: a.url, target: "_blank", rel: "noopener", textContent: `${a.title} ↗` })
+          : a.title;
+        return el("div", { className: "activity" }, [
+          el("div", { className: "emoji", textContent: a.emoji }),
+          el("div", {}, [
+            el("h3", {}, [title]),
+            el("ul", {}, a.facts.map((f) => el("li", { textContent: f }))),
+          ]),
+        ]);
+      })
+    );
+  } else hide("activities");
+
   // Favorites
   if (p.favorites?.length) {
     $("faves").append(

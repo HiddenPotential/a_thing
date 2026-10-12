@@ -12,19 +12,58 @@ window.PROFILE = {
   nickname: "AW",
   grade: "7th grader",
   hi: "Hi! I'm",
-  tagline: "I like building stuff, drawing, and asking way too many questions. ✨",
+  tagline: "I make games and apps, run a science YouTube channel, play golf and the flute, and spend way too long in Roblox. ✨",
   // Put a picture in /assets and write its name here, like "assets/me.png".
   // (An avatar or drawing works great too!) Leave empty to show a smiley.
   photo: "",
 
   links: [
+    { label: "YouTube", url: "https://www.youtube.com/@STEMsplosion", emoji: "▶️" },
     { label: "GitHub", url: "https://github.com/HiddenPotential", emoji: "💻" },
-    { label: "Scratch", url: "https://scratch.mit.edu", emoji: "🐱" },
   ],
 
   about: [
-    "I'm in 7th grade and I love figuring out how things work. My favorite thing to do after school is make little games and websites (like this one!).",
-    "When I'm not on the computer, I'm probably reading, playing outside, or hanging out with my friends.",
+    "I'm in 7th grade and I love building things. I started coding in Scratch in 1st grade, moved on to Python, and now I make games and apps that real people can use, like a coin pusher game and a little pet that lives on your Mac.",
+    "When I'm not coding, I'm making science videos, practicing my golf swing, or playing the flute. When I grow up, I want to be the CEO of a famous company!",
+  ],
+
+  // Things I do: each one gets a card with a few facts.
+  activities: [
+    {
+      emoji: "🦉",
+      title: "STEMsplosion",
+      facts: [
+        "My YouTube channel about science, tech, engineering, and math",
+        "Amazing facts, explained by an owl",
+      ],
+      url: "https://www.youtube.com/@STEMsplosion",
+    },
+    {
+      emoji: "⛳",
+      title: "Golf",
+      facts: [
+        "Playing since I was 8",
+        "Won awards in US Kids Golf tournaments",
+        "5th place in the Drive, Chip & Putt semifinals",
+      ],
+    },
+    {
+      emoji: "🎶",
+      title: "Flute",
+      facts: [
+        "Playing since 4th grade",
+        "Performed in my school's music recital",
+        "Favorite piece: The Magic Flute by Mozart",
+      ],
+    },
+    {
+      emoji: "🎮",
+      title: "Roblox",
+      facts: [
+        "Favorites: Forsaken, 99 Nights in the Forest, Grow a Garden",
+        "Also building my own Roblox adventure game",
+      ],
+    },
   ],
 
   favorites: [
@@ -42,9 +81,14 @@ window.PROFILE = {
       url: "https://hiddenpotential.github.io/cool/",
     },
     {
-      name: "Paper Airplane Lab",
-      description: "My science fair project about how wing shape changes flight distance.",
-      url: "",
+      name: "Fluffipets",
+      description: "A little animal that lives on your Mac desktop. He walks along your screen, follows your cursor, and naps in the corner.",
+      url: "https://hiddenpotential.github.io/apps/fluffipets/",
+    },
+    {
+      name: "Schedule Maker",
+      description: "Make a colorful class schedule in seconds and print it as a one-page PDF.",
+      url: "https://hiddenpotential.github.io/class-schedule/",
     },
     {
       name: "This Website!",

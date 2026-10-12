@@ -150,7 +150,7 @@
       plane.addEventListener("animationend", () => plane.remove());
       document.body.append(plane);
     }
-    discover("plane", "Paper airplane launched! Science fair approved.");
+    discover("plane", "Paper airplane launched! ✈️");
   });
 
   // ── 6. Footer heart ─────────────────────────────────────

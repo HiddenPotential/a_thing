@@ -105,12 +105,21 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px 0 64px; }
 /* Sections */
 .section { padding: 32px 0; }
 .section h2 { margin: 0 0 16px; font-size: 2.6rem; }
-.paper, .fave, .card {
+.paper, .activity, .fave, .card {
   background: var(--card); border: 1px solid var(--border); border-radius: 12px;
 }
 .paper { padding: 16px 20px; }
 .paper p { margin: 0 0 12px; }
 .paper p:last-child { margin: 0; }
+
+/* Things I do */
+.activities { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.activity { display: flex; gap: 14px; padding: 16px 20px; }
+.activity .emoji { font-size: 2rem; line-height: 1.2; }
+.activity h3 { margin: 0 0 4px; font-size: 1.7rem; }
+.activity h3 a { color: var(--text); text-decoration: none; }
+.activity h3 a:hover { color: var(--pen); }
+.activity ul { margin: 0; padding-left: 18px; color: var(--muted); }
 
 /* Favorites */
 .faves { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
@@ -120,7 +129,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px 0 64px; }
 .fave .value { font-family: var(--hand); font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
 
 /* Projects */
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
 .card { position: relative; display: block; padding: 16px 20px; color: var(--text); text-decoration: none; }
 a.card:hover { border-color: var(--pen); }
 .card h3 { margin: 0 0 4px; font-size: 1.7rem; }
@@ -144,6 +153,7 @@ a.card:hover { border-color: var(--pen); }
   main { padding: 0 16px 0 36px; }
   .footer { padding: 24px 16px 40px 36px; }
   .faves { grid-template-columns: repeat(2, 1fr); }
+  .activities { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
