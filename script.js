@@ -33,7 +33,6 @@
   // About
   if (p.about?.length) {
     $("about-text").append(...p.about.map((t) => el("p", { textContent: t })));
-    $("learning").append(...(p.learning || []).map((s) => el("li", { textContent: s })));
   } else hide("about");
 
   // Favorites
@@ -48,19 +47,6 @@
       )
     );
   } else hide("favorites");
-
-  // My year
-  if (p.myYear?.length) {
-    $("timeline").append(
-      ...p.myYear.map((e) =>
-        el("li", {}, [
-          el("div", { className: "when", textContent: e.when }),
-          el("h3", { textContent: e.title }),
-          el("p", { textContent: e.note }),
-        ])
-      )
-    );
-  } else hide("year");
 
   // Projects
   if (p.projects?.length) {
@@ -79,18 +65,6 @@
       })
     );
   } else hide("projects");
-
-  // Goals
-  if (p.goals?.length) {
-    $("checklist").append(
-      ...p.goals.map((g) =>
-        el("li", { className: g.done ? "done" : "" }, [
-          el("span", { className: "box", textContent: g.done ? "✓" : "" }),
-          el("span", { textContent: g.text }),
-        ])
-      )
-    );
-  } else hide("goals");
 
   // Hide nav links for removed sections
   document.querySelectorAll(".nav nav a").forEach((a) => {

@@ -35,16 +35,6 @@ window.PROFILE = {
     { emoji: "🎨", label: "Color", value: "Teal" },
   ],
 
-  learning: [
-    "Coding", "HTML & CSS", "Drawing", "Piano", "Spanish", "Basketball",
-  ],
-
-  myYear: [
-    { when: "Fall", title: "Joined the robotics club", note: "Our robot can pick up a ball now (most of the time)." },
-    { when: "Winter", title: "Science fair project", note: "Tested which paper airplane design flies the farthest." },
-    { when: "Spring", title: "Made my first website", note: "You're looking at it! 🎉" },
-  ],
-
   projects: [
     {
       name: "Maze Game",
@@ -64,12 +54,5 @@ window.PROFILE = {
       tags: ["Code"],
       url: "https://github.com/HiddenPotential/a_thing",
     },
-  ],
-
-  goals: [
-    { text: "Build a website", done: true },
-    { text: "Read 20 books this year", done: false },
-    { text: "Learn to make a real app", done: false },
-    { text: "Beat my mile time", done: false },
   ],
 };

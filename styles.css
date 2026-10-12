@@ -173,23 +173,6 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px 0 76px; }
 .paper p { margin: 0 0 12px; }
 .paper p:last-child { margin: 0; }
 
-.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
-.sticky {
-  position: relative; padding: 22px 20px 20px;
-  box-shadow: 0 8px 14px rgba(0, 0, 0, .14);
-  transform: rotate(2deg);
-}
-.sticky::before {
-  content: ""; position: absolute; top: -12px; left: 50%; width: 70px; height: 24px;
-  background: var(--tape); transform: translateX(-50%) rotate(-4deg);
-}
-.sticky h3 { margin: 0 0 12px; font-size: 1.8rem; }
-.yellow { background: var(--yellow); }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
-.chips li {
-  padding: 2px 12px; border: 2px dashed var(--line); border-radius: 999px; font-size: 1rem;
-}
-
 /* Favorites */
 .faves { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 18px; }
 .fave {
@@ -204,19 +187,6 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px 0 76px; }
 .fave .emoji { font-size: 2.4rem; line-height: 1; }
 .fave .label { font-size: .9rem; color: var(--muted); margin-top: 6px; }
 .fave .value { font-family: var(--hand); font-size: 1.7rem; font-weight: 700; }
-
-/* Timeline */
-.timeline { list-style: none; padding: 0 0 0 28px; margin: 0; border-left: 3px dashed var(--ink); }
-.timeline li { position: relative; padding: 0 0 26px 12px; }
-.timeline li:last-child { padding-bottom: 0; }
-.timeline li::before {
-  content: "★"; position: absolute; left: -46px; top: -2px;
-  width: 34px; height: 34px; display: grid; place-items: center;
-  background: var(--bg); color: var(--pen); font-size: 1.5rem;
-}
-.timeline .when { font-family: var(--hand); font-size: 1.4rem; color: var(--ink); font-weight: 700; }
-.timeline h3 { margin: 0; font-family: var(--print); font-size: 1.2rem; font-weight: 400; }
-.timeline p { margin: 2px 0 0; color: var(--muted); }
 
 /* Project cards */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px; }
@@ -234,16 +204,6 @@ a.card:hover { transform: translate(-3px, -3px) rotate(0); box-shadow: 6px 7px 0
 .card .arrow { position: absolute; top: 14px; right: 16px; font-size: 1.3rem; color: var(--pen); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tags span { font-size: .9rem; padding: 0 10px; border-radius: 6px; background: var(--hl); }
-
-/* Goals checklist */
-.checklist { list-style: none; margin: 0; max-width: 520px; }
-.checklist li { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-size: 1.2rem; }
-.checklist .box {
-  flex-shrink: 0; width: 26px; height: 26px; display: grid; place-items: center;
-  border: 2px solid var(--line); border-radius: 4px;
-  font-family: var(--hand); font-size: 1.6rem; font-weight: 700; color: var(--pen);
-}
-.checklist li.done span:last-child { text-decoration: line-through; text-decoration-color: var(--pen); text-decoration-thickness: 2px; color: var(--muted); }
 
 .footer {
   max-width: var(--max); margin: 0 auto; padding: 32px 24px 48px 76px;
@@ -274,7 +234,6 @@ a.card:hover { transform: translate(-3px, -3px) rotate(0); box-shadow: 6px 7px 0
   .hero { flex-direction: column; align-items: flex-start; gap: 28px; padding: 44px 0 40px; }
   .avatar { width: 140px; height: 140px; font-size: 4rem; }
   .doodle.squiggle { display: none; }
-  .about-grid { grid-template-columns: 1fr; }
   .section h2 { font-size: 2.5rem; }
   .faves { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .footer { padding: 24px 16px 40px 40px; }
