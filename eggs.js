@@ -3,7 +3,7 @@
 //  1. Konami code  ↑ ↑ ↓ ↓ ← → ← → B A   → cheat code mode
 //  2. Click the photo 5 times             → costume change
 //  3. Click the spinning star             → star burst
-//  4. Type the word "pizza" anywhere      → it's raining pizza
+//  4. Type "ice cream" anywhere           → it's raining ice cream
 //  5. Double-click the logo (top left)    → paper airplane
 //  6. Click the heart in the footer       → floating hearts
 //  (+ a secret message in the browser console for curious coders)
@@ -84,7 +84,7 @@
   let kPos = 0;
 
   // ── 4. Typed secret word ────────────────────────────────
-  const secret = "pizza";
+  const secret = "ice cream";
   let typed = "";
 
   document.addEventListener("keydown", (ev) => {
@@ -104,8 +104,8 @@
       typed = (typed + key).slice(-secret.length);
       if (typed === secret) {
         typed = "";
-        rain(["🍕"], 40);
-        discover("pizza", "Did someone say PIZZA?!");
+        rain(["🍦", "🍨", "🍧"], 40);
+        discover("icecream", "Did someone say ICE CREAM?!");
       }
     }
   });
@@ -113,7 +113,7 @@
   // ── 2. Click the photo 5 times ──────────────────────────
   const avatar = document.getElementById("avatar");
   const frame = document.querySelector(".photo-frame");
-  const costumes = ["😎", "🤓", "🤖", "👽", "🦖", "🐸", "🥷", "😄"];
+  const costumes = ["😎", "🤓", "🤖", "👽", "🦖", "🐍", "🥷", "😄"];
   let clicks = 0, costume = 0, clickTimer;
   frame.addEventListener("click", () => {
     frame.classList.remove("wiggle");

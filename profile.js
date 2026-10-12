@@ -28,12 +28,11 @@ window.PROFILE = {
   ],
 
   favorites: [
-    { emoji: "📚", label: "Subject", value: "Science" },
-    { emoji: "🍕", label: "Food", value: "Pizza" },
-    { emoji: "🎮", label: "Game", value: "Minecraft" },
-    { emoji: "📖", label: "Book", value: "Percy Jackson" },
-    { emoji: "🐶", label: "Animal", value: "Dogs" },
-    { emoji: "🎨", label: "Color", value: "Orange" },
+    { emoji: "🍦", label: "Food", value: "Ice Cream" },
+    { emoji: "🎮", label: "Game", value: "Genshin Impact" },
+    { emoji: "📖", label: "Book", value: "The Dragonships series" },
+    { emoji: "🐍", label: "Animal", value: "Snakes" },
+    { emoji: "🎨", label: "Color", value: "Teal" },
   ],
 
   learning: [
