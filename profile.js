@@ -39,19 +39,16 @@ window.PROFILE = {
     {
       name: "Maze Game",
       description: "A game where you escape a maze before the timer runs out.",
-      tags: ["Scratch", "Game"],
       url: "",
     },
     {
       name: "Paper Airplane Lab",
       description: "My science fair project about how wing shape changes flight distance.",
-      tags: ["Science"],
       url: "",
     },
     {
       name: "This Website!",
       description: "My own little corner of the internet, made with HTML, CSS, and JavaScript.",
-      tags: ["Code"],
       url: "https://github.com/HiddenPotential/a_thing",
     },
   ],

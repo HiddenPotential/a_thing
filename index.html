@@ -20,48 +20,36 @@
 <body>
   <header class="nav">
     <a class="brand" href="#top" id="brand"></a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#favorites">Faves</a>
-      <a href="#projects">Projects</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to chalkboard mode" title="Switch theme">
-        <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
-      </button>
-    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to chalkboard mode" title="Switch theme">
+      <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+    </button>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="photo-frame">
-        <span class="tape"></span>
-        <div class="avatar" id="avatar"></div>
-      </div>
-      <div class="hero-text">
-        <p class="hi" id="hi"></p>
-        <h1><span class="highlight" id="name"></span></h1>
-        <p class="badge" id="grade"></p>
-        <p class="tagline" id="tagline"></p>
-        <ul class="links" id="hero-links"></ul>
-      </div>
+      <div class="photo-frame"><div class="avatar" id="avatar"></div></div>
+      <p class="hi" id="hi"></p>
+      <h1><span class="highlight" id="name"></span></h1>
+      <p class="grade" id="grade"></p>
+      <p class="tagline" id="tagline"></p>
+      <ul class="links" id="hero-links"></ul>
       <svg class="doodle star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 61 38 93 39 68 59 77 91 50 72 23 91 32 59 7 39 39 38Z"/></svg>
-      <svg class="doodle squiggle" viewBox="0 0 200 40" aria-hidden="true"><path d="M5 20 Q 25 0 45 20 T 85 20 T 125 20 T 165 20 T 195 20"/></svg>
     </section>
 
-    <section id="about" class="section reveal">
+    <section id="about" class="section">
       <h2>About Me</h2>
       <div class="paper" id="about-text"></div>
     </section>
 
-    <section id="favorites" class="section reveal">
+    <section id="favorites" class="section">
       <h2>My Favorite Things</h2>
       <div class="faves" id="faves"></div>
     </section>
 
-    <section id="projects" class="section reveal">
+    <section id="projects" class="section">
       <h2>Stuff I Made</h2>
       <div class="cards" id="cards"></div>
     </section>
-
   </main>
 
   <footer class="footer">

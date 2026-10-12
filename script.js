@@ -55,7 +55,6 @@
         const card = el(pr.url ? "a" : "div", { className: "card" }, [
           el("h3", { textContent: pr.name }),
           el("p", { textContent: pr.description }),
-          el("div", { className: "tags" }, (pr.tags || []).map((t) => el("span", { textContent: t }))),
         ]);
         if (pr.url) {
           Object.assign(card, { href: pr.url, target: "_blank", rel: "noopener" });
@@ -65,11 +64,6 @@
       })
     );
   } else hide("projects");
-
-  // Hide nav links for removed sections
-  document.querySelectorAll(".nav nav a").forEach((a) => {
-    if (!document.querySelector(a.getAttribute("href"))) a.remove();
-  });
 
   $("footer-text").textContent = `made with ♥ by ${p.name} · ${new Date().getFullYear()}`;
 
@@ -82,13 +76,4 @@
     root.dataset.theme = next;
     try { localStorage.setItem("theme", next); } catch (e) {}
   });
-
-  // Reveal on scroll
-  const io = new IntersectionObserver(
-    (entries) => entries.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
-    }),
-    { threshold: 0.12 }
-  );
-  document.querySelectorAll(".reveal").forEach((s) => io.observe(s));
 })();
