@@ -9,53 +9,58 @@
   const hide = (id) => { const n = $(id); if (n) n.remove(); };
 
   // Head
-  document.title = `${p.name} · ${p.role}`;
+  document.title = `${p.name}'s Website`;
   document.querySelector('meta[name="description"]').content = p.tagline;
 
   // Hero
-  $("brand").textContent = p.initials;
+  $("brand").textContent = p.nickname;
+  $("hi").textContent = p.hi;
   $("name").textContent = p.name;
-  $("role-line").textContent = [p.role, p.location].filter(Boolean).join(" · ");
+  $("grade").textContent = p.grade;
   $("tagline").textContent = p.tagline;
-  $("avatar").replaceChildren(
-    p.photo ? el("img", { src: p.photo, alt: p.name }) : p.initials
-  );
-
-  if (p.email) {
-    $("email-btn").href = $("email-big").href = `mailto:${p.email}`;
-    $("email-big").textContent = p.email;
-  } else {
-    hide("email-btn"); hide("email-big");
-  }
-  if (p.resume) $("resume-btn").href = p.resume;
-  else hide("resume-btn");
+  $("avatar").replaceChildren(p.photo ? el("img", { src: p.photo, alt: p.name }) : "😄");
+  if (!p.grade) hide("grade");
 
   $("hero-links").append(
     ...(p.links || []).map((l) =>
-      el("li", {}, [el("a", { href: l.url, textContent: l.label, target: "_blank", rel: "noopener" })])
+      el("li", {}, [el("a", {
+        href: l.url, target: "_blank", rel: "noopener",
+        textContent: [l.emoji, l.label].filter(Boolean).join(" "),
+      })])
     )
   );
 
   // About
   if (p.about?.length) {
     $("about-text").append(...p.about.map((t) => el("p", { textContent: t })));
-    $("skills").append(...(p.skills || []).map((s) => el("li", { textContent: s })));
+    $("learning").append(...(p.learning || []).map((s) => el("li", { textContent: s })));
   } else hide("about");
 
-  // Experience
-  if (p.experience?.length) {
-    $("timeline").append(
-      ...p.experience.map((e) =>
-        el("li", {}, [
-          el("div", { className: "period", textContent: e.period }),
-          el("div", {}, [
-            el("h3", {}, [`${e.title} `, el("span", { className: "org", textContent: `@ ${e.org}` })]),
-            el("p", { textContent: e.summary }),
-          ]),
+  // Favorites
+  if (p.favorites?.length) {
+    $("faves").append(
+      ...p.favorites.map((f) =>
+        el("div", { className: "fave" }, [
+          el("div", { className: "emoji", textContent: f.emoji }),
+          el("div", { className: "label", textContent: f.label }),
+          el("div", { className: "value", textContent: f.value }),
         ])
       )
     );
-  } else hide("experience");
+  } else hide("favorites");
+
+  // My year
+  if (p.myYear?.length) {
+    $("timeline").append(
+      ...p.myYear.map((e) =>
+        el("li", {}, [
+          el("div", { className: "when", textContent: e.when }),
+          el("h3", { textContent: e.title }),
+          el("p", { textContent: e.note }),
+        ])
+      )
+    );
+  } else hide("year");
 
   // Projects
   if (p.projects?.length) {
@@ -75,14 +80,26 @@
     );
   } else hide("projects");
 
+  // Goals
+  if (p.goals?.length) {
+    $("checklist").append(
+      ...p.goals.map((g) =>
+        el("li", { className: g.done ? "done" : "" }, [
+          el("span", { className: "box", textContent: g.done ? "✓" : "" }),
+          el("span", { textContent: g.text }),
+        ])
+      )
+    );
+  } else hide("goals");
+
   // Hide nav links for removed sections
   document.querySelectorAll(".nav nav a").forEach((a) => {
     if (!document.querySelector(a.getAttribute("href"))) a.remove();
   });
 
-  $("footer-text").textContent = `© ${new Date().getFullYear()} ${p.name}`;
+  $("footer-text").textContent = `made with ♥ by ${p.name} · ${new Date().getFullYear()}`;
 
-  // Theme toggle
+  // Theme toggle (notebook ↔ chalkboard)
   $("theme-toggle").addEventListener("click", () => {
     const root = document.documentElement;
     const current = root.dataset.theme ||

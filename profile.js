@@ -1,77 +1,76 @@
 // ─────────────────────────────────────────────────────────────
-//  Edit this file to make the site yours.
-//  Every section on the page is rendered from this object.
-//  Delete any section (or leave its array empty) to hide it.
+//  ✏️  Edit this file to make the site yours!
+//  Everything on the page comes from here.
+//  To hide a section, make its list empty, like:  projects: []
+//
+//  🔒 Safety tip: don't put your home address, phone number,
+//  full school name, or personal email on a public website.
 // ─────────────────────────────────────────────────────────────
 
 window.PROFILE = {
   name: "Your Name",
-  initials: "YN",
-  role: "Software Engineer",
-  location: "City, Country",
-  tagline:
-    "I build thoughtful software and care about the small details that make things feel effortless.",
-  // Optional: put a square photo in /assets and reference it here, e.g. "assets/me.jpg".
-  // Leave empty to show your initials instead.
+  nickname: "YN",
+  grade: "7th grader",
+  hi: "Hi! I'm",
+  tagline: "I like building stuff, drawing, and asking way too many questions. ✨",
+  // Put a picture in /assets and write its name here, like "assets/me.png".
+  // (An avatar or drawing works great too!) Leave empty to show a smiley.
   photo: "",
-  email: "you@example.com",
-  resume: "", // e.g. "assets/resume.pdf"
 
   links: [
-    { label: "GitHub", url: "https://github.com/HiddenPotential" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/your-handle" },
-    { label: "X / Twitter", url: "https://x.com/your-handle" },
+    { label: "GitHub", url: "https://github.com/HiddenPotential", emoji: "💻" },
+    { label: "Scratch", url: "https://scratch.mit.edu", emoji: "🐱" },
   ],
 
   about: [
-    "Hi! I'm a developer who enjoys turning fuzzy ideas into clear, working products. I like working across the stack, from shaping an interface to designing the data model behind it.",
-    "Outside of work you'll find me reading, cooking something new, or wandering around with a camera.",
+    "I'm in 7th grade and I love figuring out how things work. My favorite thing to do after school is make little games and websites (like this one!).",
+    "When I'm not on the computer, I'm probably reading, playing outside, or hanging out with my friends.",
   ],
 
-  skills: [
-    "TypeScript", "React", "Node.js", "Python",
-    "SQL", "Cloud", "Product thinking", "Design systems",
+  favorites: [
+    { emoji: "📚", label: "Subject", value: "Science" },
+    { emoji: "🍕", label: "Food", value: "Pizza" },
+    { emoji: "🎮", label: "Game", value: "Minecraft" },
+    { emoji: "📖", label: "Book", value: "Percy Jackson" },
+    { emoji: "🐶", label: "Animal", value: "Dogs" },
+    { emoji: "🎨", label: "Color", value: "Orange" },
   ],
 
-  experience: [
-    {
-      title: "Software Engineer",
-      org: "Company Name",
-      period: "2024 — Present",
-      summary: "What you work on, the impact you've had, and what you're proud of.",
-    },
-    {
-      title: "Previous Role",
-      org: "Another Company",
-      period: "2021 — 2024",
-      summary: "A sentence or two about this role and what you learned.",
-    },
-    {
-      title: "B.S. Computer Science",
-      org: "University Name",
-      period: "2017 — 2021",
-      summary: "Relevant coursework, honors, or activities.",
-    },
+  learning: [
+    "Coding", "HTML & CSS", "Drawing", "Piano", "Spanish", "Basketball",
+  ],
+
+  myYear: [
+    { when: "Fall", title: "Joined the robotics club", note: "Our robot can pick up a ball now (most of the time)." },
+    { when: "Winter", title: "Science fair project", note: "Tested which paper airplane design flies the farthest." },
+    { when: "Spring", title: "Made my first website", note: "You're looking at it! 🎉" },
   ],
 
   projects: [
     {
-      name: "Project One",
-      description: "A short description of what it does and why it exists.",
-      tags: ["React", "TypeScript"],
-      url: "https://github.com/HiddenPotential",
-    },
-    {
-      name: "Project Two",
-      description: "Another thing you built, maybe a tool, a library, or an experiment.",
-      tags: ["Python", "ML"],
+      name: "Maze Game",
+      description: "A game where you escape a maze before the timer runs out.",
+      tags: ["Scratch", "Game"],
       url: "",
     },
     {
-      name: "Project Three",
-      description: "Something you're curious about or currently tinkering with.",
-      tags: ["Side project"],
+      name: "Paper Airplane Lab",
+      description: "My science fair project about how wing shape changes flight distance.",
+      tags: ["Science"],
       url: "",
     },
+    {
+      name: "This Website!",
+      description: "My own little corner of the internet, made with HTML, CSS, and JavaScript.",
+      tags: ["Code"],
+      url: "https://github.com/HiddenPotential/a_thing",
+    },
+  ],
+
+  goals: [
+    { text: "Build a website", done: true },
+    { text: "Read 20 books this year", done: false },
+    { text: "Learn to make a real app", done: false },
+    { text: "Beat my mile time", done: false },
   ],
 };

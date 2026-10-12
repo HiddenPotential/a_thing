@@ -1,15 +1,18 @@
-# Personal site
+# My Website ✏️
 
-A simple, fast personal website. Plain HTML/CSS/JS, no build step.
+A notebook-style personal website. Plain HTML/CSS/JS, no build step.
+Click the ☀️/🌙 button to switch between notebook paper and chalkboard.
 
 ## Make it yours
 
-Everything on the page comes from **`profile.js`**. Edit your name, bio, links, experience and projects there.
+Everything on the page comes from **`profile.js`**. Change your name, bio, favorite things, projects, and goals there.
+
+> 🔒 Keep it safe: don't put your address, phone number, full school name, or personal email on a public site.
 
 - Add a photo: drop `me.jpg` in `assets/` and set `photo: "assets/me.jpg"`.
-- Add a résumé: drop `resume.pdf` in `assets/` and set `resume: "assets/resume.pdf"`.
+- Check off a goal: set `done: true`.
 - Hide a section: empty its array (e.g. `projects: []`).
-- Change colors: edit the `--accent` variables at the top of `styles.css`.
+- Change colors: edit the variables at the top of `styles.css`.
 
 ## Preview locally
 
